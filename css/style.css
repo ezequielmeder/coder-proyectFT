@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/*RESET*/
+
+* {
+    margin: 0; /*margen*/
+    padding: 0; /*margen interno*/
+}
+
+
+/*--------------------------HEADER----------------------*/
+header {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+h1 {
+    text-align: center;
+}
+header img {
+    display: flex;
+    width: 100px;
+    height: 100px;
+
+}
+header nav ul {
+    display: flex;
+}
+h2 {
+
+    color: red;
+    text-align: center;
+}
+
+header h2 {
+
+    color: black;
+}
+nav ul li {
+    
+    margin: 10px 30px 10px 30px;
+}
+
+/*-------------------------MAIN------------------------*/
+
+main {
+    background-color: aquamarine;
+    
+}
+/*Clases*/
+/*utilizado para conjuntos*/
+.boton { 
+    background-color: black;
+    color: whitesmoke;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+/*utilizado para mayor especificidad*/
+
+.hero {
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/tecnologiaydeporte.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+
+
+}
+.hero a {
+    background-color: black;
+}
+
+
+.divisores {
+    border: 2px gray solid;
+    text-align: center;
+    background-color: aquamarine;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    align-content: center;
+    
+}
+.divisores h2 {
+    display: flex;
+}
+.divisores div img {
+    width: 300px;
+    height: 250px;
+
+}
+.divisores .divisores-contenedor {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+main section p {
+    text-align: center;
+    background-color: aquamarine;
+    max-height: 100px;
+}
+main section div img {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+/*---------------FOOTER--------------------*/
+h4 {
+    display: inline;
+}
+
+.fixed img {
+    width: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+
+}
+footer {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+footer img {
+    width: 50px;
+    height: 50px;
+}
