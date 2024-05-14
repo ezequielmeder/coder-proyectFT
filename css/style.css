@@ -50,7 +50,7 @@ nav ul li {
 /*-------------------------MAIN------------------------*/
 
 main {
-    background-color: aquamarine;
+    background-color: black;
     
 }
 /*Clases*/
@@ -62,6 +62,12 @@ main {
     padding-bottom: 10px;
 }
 
+.card {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+
+}
 /*utilizado para mayor especificidad*/
 
 .hero {
@@ -83,12 +89,16 @@ main {
 .hero a {
     background-color: black;
 }
-
+.hero p {
+    background-color: transparent;
+    color: crimson;
+    
+}
 
 .divisores {
     border: 2px gray solid;
     text-align: center;
-    background-color: aquamarine;
+    background-color: black;
     width: 300px;
     height: 350px;
     margin: 20px;
@@ -112,6 +122,17 @@ main {
 
 
 }
+.tarjetas {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.card-title {
+    align-content: center;
+    justify-content: space-around;
+}
+
 main section p {
     text-align: center;
     background-color: aquamarine;

@@ -20,90 +20,100 @@
         crossorigin="anonymous"></script>
     <header>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <img src="./img/forcetimetitle.png" alt="FTPerformance">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">FTPerformance</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/Servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/Eventos.html">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/Premium.html">Premium</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#redes">Redes</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./pages/Quienes somos.html" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Quienes somos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Lic Ezequiel Meder</a></li>
-                            <li><a class="dropdown-item" href="#">Lic Lautaro Bonzi</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="./pages/Contacto.html">Contacto</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Ir a Premium</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Contacto</button>
-                </form>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <img src="./img/forcetimetitle.png" alt="FTPerformance">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">FTPerformance</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/Servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/Eventos.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/Premium.html">Premium</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#redes">Redes</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./pages/Quienes somos.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Quienes somos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Lic Bonzi, Lautaro</a></li>
+                                <li><a class="dropdown-item" href="#">Lic Meder, Ezequiel</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./pages/Contacto.html">Contacto</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Ir a Premium</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" href="./pages/Contacto.html" submit>Contacto</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
 
-        
-   
-
     <main>
+
         <!--contiene todo el contenido principal-->
         <section class="hero"> <!--siempre van dentro del main-->
             <h2>Alto Rendimiento, Fitness y Rehabilitación</h2>
             <!--imagen-->
             <p>Todo el conocimiento de entrenamiento que necesitas, en un solo lugar</p>
         </section>
-
-        <section class="divisores">
+        <section>
             <h2>FTPerformance, todo en uno</h2>
-            <div class="divisores-contenedor">
-                <img src="./img/tecnologiasalud.jpeg" alt="">
-                <h3>Capacitaciones</h3>
-                <a href="./pages/Servicios.html" class="boton">Ir</a>
-            </div>
-            <div class="divisores-contenedor">
-                <img src="./img/otros.jpeg" alt="">
-                <h3>FTPremium</h3>
-                <a href="./pages/Premium.html" class="boton">Ir</a>
+        </section>
+        <section class="tarjetas">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/capacitaciones.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Capacitaciones</h5>
+                    <p class="card-text">Destina tu tiempo a diferentes lecturas, webinar, entre otros.</p>
+                    <a href="./pages/Servicios.html" class="btn btn-primary">IR</a>
+                </div>
             </div>
 
-            <div class="divisores-contenedor">
-                <img src="./img/tecnologiasalud.jpeg" alt="">
-                <h3>Lo más leído del Blog</h3>
-                <a href="./pages/Servicios.html" class="boton">Ir</a>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/otros.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">FTPremium</h5>
+                    <p class="card-text">Espacio de contenido exclusivo.</p>
+                    <a href="./pages/Premium.html" class="btn btn-primary">IR</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./img/tecnologiasalud.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Lo más leído del Blog</h5>
+                    <p class="card-text">Revisa el contenido que más te guste.</p>
+                    <a href="./pages/Eventos.html" class="btn btn-primary">IR</a>
+                </div>
             </div>
 
         </section>
+
     </main>
     <div class="fixed">
         <a href=""><img src="./img/whatsappimg.png" alt=""></a>
