@@ -15,7 +15,9 @@ header {
     justify-content: space-between;
     padding: 30px;
 }
-
+.container-fluid {
+    text-decoration-color: red;
+}
 nav {
     border-radius: 20px;
 }
@@ -32,6 +34,7 @@ header nav ul {
     display: flex;
     padding: 20px;
 }
+
 h2 {
 
     color: red;
@@ -45,6 +48,21 @@ header h2 {
 nav ul li {
     
     margin: 10px 30px 10px 30px;
+}
+
+nav ul li a {
+    color: blue;
+}
+
+.btn-btn-outline-success {
+    border-color: black;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    text-orientation: sideways;
+
 }
 
 /*-------------------------MAIN------------------------*/
@@ -135,12 +153,19 @@ main {
 
 main section p {
     text-align: center;
-    background-color: aquamarine;
+    background-color: transparent;
     max-height: 100px;
 }
 main section div img {
     width: 200px;
     height: 200px;
+}
+
+.btn-btn-primary {
+    color: white;
+    background-color: red;
+    width: 180px;
+    display: inline-flexbox;
 }
 
 
@@ -171,4 +196,14 @@ footer {
 footer img {
     width: 50px;
     height: 50px;
+}
+
+/*-----EVENTOS------*/
+
+.carousel-slide {
+    border: 2cap;
+    width: 850px;
+    height: 300px;
+    position: absolute;
+    display: flex;
 }
