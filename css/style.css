@@ -10,22 +10,27 @@
 
 /*--------------------------HEADER----------------------*/
 header {
-    background-color: aquamarine;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 30px;
+}
+
+nav {
+    border-radius: 20px;
 }
 h1 {
     text-align: center;
 }
 header img {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
 }
 header nav ul {
     display: flex;
+    padding: 20px;
 }
 h2 {
 

@@ -1,76 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--CSS-->
     <link rel="stylesheet" href="./css/style.css">
     <title>FTPerformance</title>
 </head>
+
 <body>
     <!--el body representa todo el contenido-->
     <!--Encabezado-->
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <header>
-        <img src="./img/forcetimetitle.png" alt="logo de FTPerformance">
-        <nav>
-            <!--listas desordenadas-->
-            <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./pages/Quienes somos.html">Quienes somos</a></li>
-                <li><a href="./pages/Servicios.html">Servicios</a></li>
-                <li><a href="./pages/Eventos.html">Eventos</a></li>
-                <li><a href="./pages/Premium.html">Premium</a></li>
-                <li><a href="./pages/Contacto.html">Contacto</a></li>
-                <li><a href="#redes">Redes</a></li>
-            </ul>
-                <!--enlaces absolutos (otra pagina), relativos (de una pestaña a otra) e internos (en la misma pestaña)-->
-        </nav>
-        <h1>FTPerformance</h1> <!--solo puede existir un h1-->
-        <h2>Espacio para los entrenadores</h2>
-        <a href="https://www.coderhouse.com/ar/" target="_blank">CoderHouse</a>
 
-
+    <nav class="navbar navbar-expand-lg bg-light">
+        <img src="./img/forcetimetitle.png" alt="FTPerformance">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">FTPerformance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/Servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/Eventos.html">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/Premium.html">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#redes">Redes</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./pages/Quienes somos.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Quienes somos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lic Ezequiel Meder</a></li>
+                            <li><a class="dropdown-item" href="#">Lic Lautaro Bonzi</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./pages/Contacto.html">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Ir a Premium</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Contacto</button>
+                </form>
+            </div>
+        </div>
+    </nav>
     </header>
+
+        
+   
 
     <main>
         <!--contiene todo el contenido principal-->
-            <section class="hero"> <!--siempre van dentro del main-->
-                <h2>Alto Rendimiento, Fitness y Rehabilitación</h2>
-                <!--imagen-->
-                <p>Todo el conocimiento de entrenamiento que necesitas, en un solo lugar</p>
-            </section>
+        <section class="hero"> <!--siempre van dentro del main-->
+            <h2>Alto Rendimiento, Fitness y Rehabilitación</h2>
+            <!--imagen-->
+            <p>Todo el conocimiento de entrenamiento que necesitas, en un solo lugar</p>
+        </section>
 
-            <section class="divisores">
-                <h2>FTPerformance, todo en uno</h2>
-                <div class="divisores-contenedor">
-                    <img src="./img/tecnologiasalud.jpeg" alt="">
-                    <h3>Capacitaciones</h3>
-                    <a href="./pages/Servicios.html" class="boton">Ir</a>
-                </div>
-                <div class="divisores-contenedor">
-                    <img src="./img/otros.jpeg" alt="">
-                    <h3>FTPremium</h3>
-                    <a href="./pages/Premium.html" class="boton">Ir</a>
-                </div>
+        <section class="divisores">
+            <h2>FTPerformance, todo en uno</h2>
+            <div class="divisores-contenedor">
+                <img src="./img/tecnologiasalud.jpeg" alt="">
+                <h3>Capacitaciones</h3>
+                <a href="./pages/Servicios.html" class="boton">Ir</a>
+            </div>
+            <div class="divisores-contenedor">
+                <img src="./img/otros.jpeg" alt="">
+                <h3>FTPremium</h3>
+                <a href="./pages/Premium.html" class="boton">Ir</a>
+            </div>
 
-                <div class="divisores-contenedor">
-                    <img src="./img/tecnologiasalud.jpeg" alt="">
-                    <h3>Lo más leído del Blog</h3>
-                    <a href="./pages/Servicios.html" class="boton">Ir</a>
-                </div>
-                
-            </section>
+            <div class="divisores-contenedor">
+                <img src="./img/tecnologiasalud.jpeg" alt="">
+                <h3>Lo más leído del Blog</h3>
+                <a href="./pages/Servicios.html" class="boton">Ir</a>
+            </div>
+
+        </section>
     </main>
     <div class="fixed">
         <a href=""><img src="./img/whatsappimg.png" alt=""></a>
     </div>
-    
+
     <footer id="redes">
         <h4>Acerca de</h4>
         <h4>Ayuda</h4>
         <h4>Social</h4>
-        
+
 
     </footer>
 </body>
+
 </html>
