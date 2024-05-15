@@ -207,3 +207,18 @@ footer img {
     position: absolute;
     display: flex;
 }
+
+/*---------SERVICIOS---------*/
+
+.title-dash {
+    font-size: large;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    
+}
