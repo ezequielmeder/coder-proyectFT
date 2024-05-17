@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+* {
+  margin: 0;
+  /*margen*/
+  padding: 0;
+  /*margen interno*/ }
+
+header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px; }
+  header nav {
+    border-radius: 20px; }
+    header nav img {
+      display: flex;
+      width: 80px;
+      height: 80px; }
+    header nav div a
+button
+div ul {
+      display: flex;
+      padding: 20px; }
+      header nav div a
+button
+div ul li {
+        margin: 10px 30px 10px 30px; }
+        header nav div a
+button
+div ul li a {
+          color: blue; }
+
+.container-fluid {
+  text-decoration-color: red; }
+
+.hero {
+  width: 100%;
+  height: 300px;
+  background-image: url(../img/tecnologiaydeporte.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; }
+  .hero h2 {
+    background-color: transparent; }
+  .hero p {
+    background-color: transparent;
+    color: crimson; }
+
+.boton {
+  background-color: black;
+  color: whitesmoke;
+  text-decoration: none;
+  padding-bottom: 10px; }
+
+.card {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around; }
+
+.btn-btn-outline-success {
+  border-color: black;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  text-orientation: sideways; }
+
+/*-----EVENTOS------*/
+.carousel-slide {
+  border: 2cap;
+  width: 850px;
+  height: 300px;
+  position: absolute;
+  display: flex; }
+
+/*---------SERVICIOS---------*/
+.title-dash {
+  font-size: large;
+  display: inline-block;
+  justify-content: center;
+  text-align: center; }
+
+.dashboard {
+  display: flex;
+  justify-content: space-around; }
+
+.fixed img {
+  width: 50px;
+  position: fixed;
+  bottom: 30px;
+  right: 60px; }
