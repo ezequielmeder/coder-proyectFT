@@ -84,6 +84,16 @@ python pipeline.py \
   --config config.example.json
 ```
 
+
+### Dashboard de integración (paso 3)
+
+El paso 3 ahora muestra un dashboard simple por fuente:
+
+- **CMJ/Fuerza**: CMJ promedio, pico de fuerza promedio, cantidad de registros.
+- **GPS**: distancia total, high speed total, cantidad de registros.
+- **Otra herramienta**: RPE promedio, wellness promedio, cantidad de registros.
+- **Filtro por jugador** para ver indicadores y tabla de integración específicos.
+
 ## KPIs incluidos en este MVP
 
 - Jugadores integrados.

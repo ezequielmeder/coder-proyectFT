@@ -42,11 +42,39 @@
       </section>
 
       <section class="card">
-        <h2>3) Tabla de integración</h2>
+        <h2>3) Dashboard de integración</h2>
         <p>
-          Vista consolidada para vincular fuerza + GPS + otros datos por
-          jugador y fecha.
+          Indicadores clave de CMJ, GPS y otras fuentes, con filtros por
+          jugador para reuniones rápidas del área de performance.
         </p>
+
+        <div class="filters">
+          <label>
+            Filtrar por jugador
+            <select id="playerFilter">
+              <option value="all">Todos</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="source-panels">
+          <article class="source-panel">
+            <h3>CMJ / Fuerza</h3>
+            <div id="cmjIndicators" class="mini-grid"></div>
+          </article>
+
+          <article class="source-panel">
+            <h3>GPS</h3>
+            <div id="gpsIndicators" class="mini-grid"></div>
+          </article>
+
+          <article class="source-panel">
+            <h3>Otra herramienta</h3>
+            <div id="otherIndicators" class="mini-grid"></div>
+          </article>
+        </div>
+
+        <h3>Detalle integrado por jugador y fecha</h3>
         <div class="table-wrap">
           <table id="combinedTable">
             <thead></thead>

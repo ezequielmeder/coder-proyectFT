@@ -2,10 +2,23 @@ const forceFileInput = document.getElementById('forceFile');
 const gpsFileInput = document.getElementById('gpsFile');
 const otherFileInput = document.getElementById('otherFile');
 const processBtn = document.getElementById('processBtn');
+const playerFilter = document.getElementById('playerFilter');
+
 const statusText = document.getElementById('status');
 const kpiCards = document.getElementById('kpiCards');
+const cmjIndicators = document.getElementById('cmjIndicators');
+const gpsIndicators = document.getElementById('gpsIndicators');
+const otherIndicators = document.getElementById('otherIndicators');
+
 const tableHead = document.querySelector('#combinedTable thead');
 const tableBody = document.querySelector('#combinedTable tbody');
+
+const appState = {
+  forceRows: [],
+  gpsRows: [],
+  otherRows: [],
+  mergedRows: [],
+};
 
 function parseCsv(text) {
   const lines = text.trim().split(/\r?\n/);
@@ -33,33 +46,29 @@ function toNumber(value) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function average(rows, field) {
+  if (!rows.length) return 0;
+  return rows.reduce((sum, row) => sum + toNumber(row[field]), 0) / rows.length;
+}
+
+function sum(rows, field) {
+  return rows.reduce((acc, row) => acc + toNumber(row[field]), 0);
+}
+
 function calculateKpis(forceRows, gpsRows, otherRows) {
-  const players = new Set([
-    ...forceRows.map((r) => r.player),
-    ...gpsRows.map((r) => r.player),
-    ...otherRows.map((r) => r.player),
-  ].filter(Boolean));
-
-  const avgJump =
-    forceRows.reduce((sum, r) => sum + toNumber(r.jump_cm), 0) /
-    (forceRows.length || 1);
-
-  const avgPeakForce =
-    forceRows.reduce((sum, r) => sum + toNumber(r.peak_force_n), 0) /
-    (forceRows.length || 1);
-
-  const totalDistanceKm =
-    gpsRows.reduce((sum, r) => sum + toNumber(r.distance_km), 0);
-
-  const totalHighSpeedM =
-    gpsRows.reduce((sum, r) => sum + toNumber(r.high_speed_m), 0);
+  const players = new Set(
+    [...forceRows, ...gpsRows, ...otherRows].map((r) => r.player).filter(Boolean)
+  );
 
   return [
     { label: 'Jugadores integrados', value: players.size },
-    { label: 'Salto promedio (cm)', value: avgJump.toFixed(1) },
-    { label: 'Pico de fuerza prom. (N)', value: avgPeakForce.toFixed(1) },
-    { label: 'Distancia total GPS (km)', value: totalDistanceKm.toFixed(2) },
-    { label: 'High speed total (m)', value: totalHighSpeedM.toFixed(0) },
+    { label: 'Salto promedio (cm)', value: average(forceRows, 'jump_cm').toFixed(1) },
+    {
+      label: 'Pico de fuerza prom. (N)',
+      value: average(forceRows, 'peak_force_n').toFixed(1),
+    },
+    { label: 'Distancia total GPS (km)', value: sum(gpsRows, 'distance_km').toFixed(2) },
+    { label: 'High speed total (m)', value: sum(gpsRows, 'high_speed_m').toFixed(0) },
   ];
 }
 
@@ -99,6 +108,16 @@ function renderKpis(kpis) {
   });
 }
 
+function renderMiniKpis(container, list) {
+  container.innerHTML = '';
+  list.forEach((item) => {
+    const block = document.createElement('div');
+    block.className = 'mini-kpi';
+    block.innerHTML = `<strong>${item.label}</strong><span>${item.value}</span>`;
+    container.appendChild(block);
+  });
+}
+
 function renderTable(rows) {
   tableHead.innerHTML = '';
   tableBody.innerHTML = '';
@@ -131,6 +150,59 @@ function renderTable(rows) {
   });
 }
 
+function filterRowsByPlayer(rows, player) {
+  if (player === 'all') return rows;
+  return rows.filter((row) => row.player === player);
+}
+
+function populatePlayerFilter(mergedRows) {
+  const players = Array.from(new Set(mergedRows.map((r) => r.player).filter(Boolean))).sort();
+
+  playerFilter.innerHTML = '<option value="all">Todos</option>';
+  players.forEach((player) => {
+    const option = document.createElement('option');
+    option.value = player;
+    option.textContent = player;
+    playerFilter.appendChild(option);
+  });
+}
+
+function renderSourceDashboard(forceRows, gpsRows, otherRows) {
+  renderMiniKpis(cmjIndicators, [
+    { label: 'CMJ promedio (cm)', value: average(forceRows, 'jump_cm').toFixed(1) },
+    { label: 'Pico fuerza prom. (N)', value: average(forceRows, 'peak_force_n').toFixed(1) },
+    { label: 'Registros fuerza', value: forceRows.length },
+  ]);
+
+  renderMiniKpis(gpsIndicators, [
+    { label: 'Distancia total (km)', value: sum(gpsRows, 'distance_km').toFixed(2) },
+    { label: 'High speed total (m)', value: sum(gpsRows, 'high_speed_m').toFixed(0) },
+    { label: 'Registros GPS', value: gpsRows.length },
+  ]);
+
+  renderMiniKpis(otherIndicators, [
+    { label: 'RPE promedio', value: average(otherRows, 'rpe').toFixed(1) },
+    {
+      label: 'Wellness promedio',
+      value: average(otherRows, 'wellness_score').toFixed(1),
+    },
+    { label: 'Registros otros', value: otherRows.length },
+  ]);
+}
+
+function refreshDashboard() {
+  const selectedPlayer = playerFilter.value;
+  const forceRows = filterRowsByPlayer(appState.forceRows, selectedPlayer);
+  const gpsRows = filterRowsByPlayer(appState.gpsRows, selectedPlayer);
+  const otherRows = filterRowsByPlayer(appState.otherRows, selectedPlayer);
+  const mergedRows = filterRowsByPlayer(appState.mergedRows, selectedPlayer);
+
+  renderSourceDashboard(forceRows, gpsRows, otherRows);
+  renderTable(mergedRows);
+}
+
+playerFilter.addEventListener('change', refreshDashboard);
+
 processBtn.addEventListener('click', async () => {
   const forceRows = await fileToJson(forceFileInput);
   const gpsRows = await fileToJson(gpsFileInput);
@@ -145,8 +217,14 @@ processBtn.addEventListener('click', async () => {
   const kpis = calculateKpis(forceRows, gpsRows, otherRows);
   const mergedRows = mergeByPlayerDate(forceRows, gpsRows, otherRows);
 
+  appState.forceRows = forceRows;
+  appState.gpsRows = gpsRows;
+  appState.otherRows = otherRows;
+  appState.mergedRows = mergedRows;
+
   renderKpis(kpis);
-  renderTable(mergedRows);
+  populatePlayerFilter(mergedRows);
+  refreshDashboard();
 
   statusText.textContent = `Procesamiento completado: ${mergedRows.length} registros integrados.`;
   statusText.classList.add('done');
