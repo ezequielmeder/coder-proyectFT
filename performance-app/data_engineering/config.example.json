@@ -1,0 +1,17 @@
+{
+  "columns": {
+    "player": ["player", "jugador", "athlete", "name"],
+    "date": ["date", "fecha", "session_date"],
+    "jump_cm": ["jump_cm", "jump", "salto_cm"],
+    "peak_force_n": ["peak_force_n", "peak_force", "fuerza_pico_n"],
+    "distance_km": ["distance_km", "distance", "distancia_km"],
+    "high_speed_m": ["high_speed_m", "high_speed", "metros_alta_velocidad"],
+    "rpe": ["rpe"],
+    "wellness_score": ["wellness_score", "wellness", "bienestar"]
+  },
+  "required": {
+    "force": ["player", "date"],
+    "gps": ["player", "date"],
+    "other": ["player", "date"]
+  }
+}

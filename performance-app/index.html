@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FT Performance Orchestrator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>FT Performance Orchestrator</h1>
+      <p>
+        Plataforma para centralizar datos de rendimiento en fútbol, automatizar
+        KPIs y acelerar la toma de decisiones del área de performance.
+      </p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1) Carga de datos</h2>
+        <div class="upload-grid">
+          <label>
+            CSV de plataforma de fuerza
+            <input type="file" id="forceFile" accept=".csv" />
+          </label>
+          <label>
+            CSV de GPS
+            <input type="file" id="gpsFile" accept=".csv" />
+          </label>
+          <label>
+            CSV de otra herramienta (opcional)
+            <input type="file" id="otherFile" accept=".csv" />
+          </label>
+        </div>
+        <button id="processBtn">Procesar datos</button>
+        <p id="status">Esperando archivos para procesar.</p>
+      </section>
+
+      <section class="card">
+        <h2>2) KPIs automáticos</h2>
+        <div id="kpiCards" class="kpi-grid"></div>
+      </section>
+
+      <section class="card">
+        <h2>3) Dashboard de integración</h2>
+        <p>
+          Indicadores clave de CMJ, GPS y otras fuentes, con filtros por
+          jugador para reuniones rápidas del área de performance.
+        </p>
+
+        <div class="filters">
+          <label>
+            Filtrar por jugador
+            <select id="playerFilter">
+              <option value="all">Todos</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="source-panels">
+          <article class="source-panel">
+            <h3>CMJ / Fuerza</h3>
+            <div id="cmjIndicators" class="mini-grid"></div>
+          </article>
+
+          <article class="source-panel">
+            <h3>GPS</h3>
+            <div id="gpsIndicators" class="mini-grid"></div>
+          </article>
+
+          <article class="source-panel">
+            <h3>Otra herramienta</h3>
+            <div id="otherIndicators" class="mini-grid"></div>
+          </article>
+        </div>
+
+        <h3>Detalle integrado por jugador y fecha</h3>
+        <div class="table-wrap">
+          <table id="combinedTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>
+        MVP para departamento de performance · datos locales en navegador
+      </small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
